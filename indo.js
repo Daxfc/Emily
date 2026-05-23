@@ -179,9 +179,6 @@ function startnow(){
   }, 2000);
 }
 
-window.addEventListener('load', startnow);
-window.addEventListener('click', startnow);
-
 if(localStorage.getItem('theme') === 'sad'){
   document.body.style.background = 'url("rain-background.gif") black no-repeat';
   document.body.style.backgroundSize = 'cover';
@@ -1122,3 +1119,10 @@ function goEverything(){
     console.log('Rage theme wasn\'t playing')
   }
 }
+
+if (document.readyState === 'complete') {
+  startnow();
+} else {
+  window.addEventListener('load', startnow);
+}
+window.addEventListener('click', startnow);
