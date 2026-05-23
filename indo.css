@@ -1,0 +1,627 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bitcount Single";
+}
+
+body{
+  background: no-repeat black url('cute-background.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@keyframes loadinganim{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+} 
+
+@keyframes size-animation{
+  0%{
+    font-size: 10vw;
+  }
+  50%{
+    font-size: 11vw;
+  }
+  100%{
+    font-size: 10vw;
+  }
+}
+
+.o1{
+  animation: loadinganim 2s infinite;
+}
+
+.o2{
+  animation: loadinganim 2s infinite;
+  animation-delay: 0.5s;
+}
+
+.o3{
+  animation: loadinganim 2s infinite;
+  animation-delay: 1s;
+}
+
+.loading-screen{
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: non;
+}
+
+.loading{
+  color: white;
+  transition: 0.5s;
+  font-size: 5vw;
+  
+}
+
+#starter-one, #starter-two, #starter-three{
+  font-size: 10vw;
+  color: white;
+  animation: size-animation 0.45s infinite;
+}
+
+#starter-one{
+  position: absolute;
+  top: 40%;
+}
+
+.starter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(40vw);
+}
+
+.indo{
+  font-size: 12vw;
+  text-align: center;
+  transform: translateY(0vw);
+  color: pink;
+  text-shadow: purple 1px 1px;
+  transition: 1.5s;
+  display: non;
+}
+
+.play, .about, .settings, .achievements{
+  color: white;
+  border: solid 3px pink;
+  background: pink;
+  font-size: 6vw;
+  border-radius: 2vw;
+  width: 45%;
+  margin-bottom: 9vw;
+  opacity: 0;
+  transition: 1s;
+  display: non;
+}
+
+.play, .achievements{
+  transform: translateX(25vw);
+}
+
+.settings, .about{
+  transform: translateX(-25vw);
+}
+
+.play:active{
+  color: yellow;
+  border-color: yellow;
+}
+
+.settings:active{
+  color: yellow;
+  border-color: yellow; 
+}
+
+.achievements:active{
+  color: yellow;
+  border-color: yellow;
+}
+
+.about:active{
+  color: yellow;
+  border-color: yellow;
+}
+
+p, h1{
+  color: white;
+}
+
+.mute{
+  font-size: 5vw;
+  margin-left: 2vw;
+  text-shadow: black 1px 1px 1px;
+}
+
+.switch-options{
+  display: grid;
+  align-items: center;
+  padding: 3vw;
+  grid-row-gap: 6vw;
+  grid-template-areas:
+  "title nothing"
+  "switch text"
+  "switch2 text2"
+}
+
+#first-option{
+  grid-area: title;
+  text-shadow: black 1px 1px 1px;
+}
+
+.lever-border{
+  background: gray;
+  width: 20vw;
+  height: 10vw;
+  border-radius: 2vw;
+  padding: 1vw;
+  transition: 0.4s;
+}
+
+.lever{
+  background: white;
+  height: 100%;
+  width: 40%;
+  border-radius: 1.5vw;
+  transform: translateX(0vw);
+  transition: 0.4s;
+}
+
+#lever-one{
+  grid-area: switch;
+}
+
+#lever-two{
+  grid-area: switch2;
+}
+
+#music-mute{
+  grid-area: text;
+  font-size: 4vw;
+  direction: rtl;
+}
+
+#blip-mute{
+  grid-area: text2;
+  font-size: 4vw;
+  direction: rtl;
+}
+
+.cf-title{
+  margin-top: 7vw;
+  margin-left: 3vw;
+  text-shadow: black 1px 1px 1px;
+}
+
+.fonts-section{
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 3vw;
+}
+
+.font-button{
+  color: white;
+  background: pink;
+  border: solid 0.5vw pink;
+  border-radius: 3vw;
+  font-size: 5vw;
+  width: 50%;
+  margin-left: 3vw;
+}
+.font-button:active{
+  border: yellow 0.5vw solid;
+  color: yellow;
+}
+
+.photos-section{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0 5vw;
+  
+}
+
+#c-back{
+  margin: 3vw 0 0 3vw;
+  text-shadow: black 1px 1px 1px;
+}
+
+.back{
+  height: 50vw;
+  width: 30vw;
+  border: solid 0.5px black;
+  border-radius: 2vw;
+  margin-bottom: 5vw;
+}
+
+.back:active{
+  border: solid 0.7px yellow;
+}
+
+#exit-settings{
+  display: block;
+  border: solid 0.5vw pink;
+  border-radius: 3vw;
+  background: pink;
+  color: white;
+  font-size: 8vw;
+  margin: 3vw 0 0 3vw;
+}
+
+#exit-settings:active{
+  border: solid 0.5vw yellow;
+  color: yellow;
+}
+
+.game-settings{
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+.about-game{
+  text-shadow: black 1px 1px 1px;
+  font-size: 6vw;
+  padding: 2vw 1vw 0 3vw;
+  line-height: 10vw;
+  opacity: 0;
+  display: none;
+  transition: 1s;
+}
+
+.text, .explaining, .html, .css, .js, .important-text{
+  display: block;
+}
+
+.explaining{
+  margin-top: 15vw;
+}
+
+.important-text{
+  margin-top: 15vw;
+}
+
+#exit-about{
+  display: block;
+  border: solid 0.5vw pink;
+  border-radius: 3vw;
+  background: pink;
+  color: white;
+  font-size: 8vw;
+  margin: 3vw 0 10vw 0;
+}
+
+#exit-about:active{
+  border: solid 0.5vw yellow;
+  color: yellow;
+}
+
+.one-achievement{
+  margin: 3vw;
+  font-size: 8vw;
+  display: flex;
+  flex-direction: row;
+  border: solid 1px black;
+  border-radius: 2vw;
+  align-items: top;
+  height: 30vw;
+}
+
+.achievement-photo{
+  height: 30vw;
+  width: 30vw;
+  border-radius: 2vw;
+  margin: 0;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.achievement{
+  color: white;
+  text-shadow: black 1px 1px 1px;
+  transform: translateY(0vw);
+  margin-left: 1vw;
+}
+
+#exit-achievements{
+  display: block;
+  border: solid 0.5vw pink;
+  border-radius: 3vw;
+  background: pink;
+  color: white;
+  font-size: 8vw;
+  margin: 3vw 0 10vw 3vw;
+}
+
+#exit-achievements:active{
+  border: solid 0.5vw yellow;
+  color: yellow;
+}
+
+.game-achievements{
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+.the-game{
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  text-align: center;
+  position: absolute;
+  display: none;
+}
+
+.the-face{
+  font-size: 20vw;
+  transform: translateY(40vw);
+  font-family: sans-serif !important;
+}
+
+.text-box{
+  position: absolute;
+  left: 5vw;
+  top: 75vw;
+  border: solid 3px gray;
+  border-radius: 3vw;
+  width: 90%;
+  height: 30vw;
+  text-align: left;
+  padding: 1vw;
+}
+
+.whoa{
+  font-size: 20px;
+  color: black;
+  border:solid 0.5vw black;
+  width: 8vw;
+  height: 7vw;
+  position: absolute;
+  top: 40vw;
+  left: 20vw;
+  display: none;
+  transition: 0s;
+}
+
+.choice-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(90vw);
+}
+
+.btnss{
+  width: 40vw;
+  height: 10vw;
+  font-size: 3.5vw;
+  margin-bottom: 3vw;
+}
+
+.gear{
+  width: 12vw;
+  height: 12vw;
+}
+
+.in-game-settings-call{
+  border: none;
+  background: none;
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+}
+
+.jumpscares{
+  height: 100vw;
+  width: 100vw;
+  position: absolute;
+  left: 0%;
+  top: 10%;
+  z-index: 2;
+  display: none;
+}
+
+.ending{
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  position: absolute;
+  text-align: center;
+  display: none;
+}
+
+#returning{
+  color: gray;
+  background: rgba(125, 14, 184, 1);
+  transform: translateY(90vw);
+  border: solid 1px rgba(125, 14, 184, 1);
+  border-radius: 1vw;
+  width: 30vw;
+  height: 13vw;
+  font-size: 5vw;
+  display: none;
+}
+
+#returning:active{
+  color: yellow;
+  border: solid 1px yellow;
+}
+
+.end-text{
+  color: white;
+  transform: translateY(80vw);
+  font-size: 7vw;
+}
+
+.settings-menu{
+  align-items: center;
+  border: solid 1vw rebeccapurple;
+  background: purple;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  width: 70vw;
+  height: 40vh;
+  z-index: 3;
+  padding: 3vw;
+  border-radius: 2vw;
+  overflow-y: scroll;
+  transition: 0.5s;
+  opacity: 0;
+  display: none;
+}
+
+.settings-toggle{
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+  width: 13vw;
+  height: 13vw;
+  transition: 0.4s;
+  display: none;
+  z-index: 4;
+}
+
+.f-opt{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 5vw 0 10vw 0;
+}
+
+.s-opt{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10vw;
+}
+
+.t-opt{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10vw; 
+}
+
+.l-opt{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10vw;
+}
+
+.stngs{
+  grid-area: st;
+}
+
+.mute-texr{
+  grid-area: ttx;
+  white-space: nowrap;
+}
+
+.mute-text{
+  grid-area: ttxtx;
+  white-space: nowrap;
+}
+
+#toggle-mute-theme{
+  grid-area: tglee;
+  margin-left: auto;
+}
+
+#toggle-mute-blip{
+  grid-area: tgle;
+  margin-left: auto;
+}
+
+
+.main-menuz{
+  background: red;
+  color: white;
+  font-size: 7vw;
+  border: solid 1px red;
+  border-radius: 1vw;
+}
+
+.main-menuz:active{
+  color: yellow;
+  border: solid 1px yellow;
+}
+
+.black-screen{
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+.achi-comp{
+  margin-left: 10%;
+  font-size: 8vw;
+  display: none;
+  flex-direction: row;
+  border: solid 1px black;
+  border-radius: 2vw;
+  align-items: center;
+  height: 20vw;
+  width: 80%;
+  position: absolute;
+  bottom: 10vw;
+  border: solid 1vw rebeccapurple;
+  overflow-x: scroll;
+  background: purple;
+  transition: 1s;
+  opacity: 0;
+  z-index: 6;
+}
+
+.achi-photo{
+  height: 20vw;
+  width: 20vw;
+  border-radius: 2vw;
+  padding: 1vw 1vw 1vw 0;
+}
+
+.achi{
+  color: white;
+  text-shadow: black 1px 1px 1px;
+  transform: translateY(-6vw); 
+  font-size: 5.5vw;
+}
+
+#flowers{
+  height: 20vw;
+  width: 20vw;
+  position: absolute;
+  top: 50vw;
+  right: 10vw;
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.face-photo{
+  height: 35vw;
+  width: 48vw;
+}
