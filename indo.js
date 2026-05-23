@@ -119,7 +119,7 @@ function startnow(){
                         setTimeout(() =>{
                         starterThree.style.position = 'absolute';
                         starterThree.style.top = '55%'; 
-                          starterThree.innerHTML = 'My World!';
+                          starterThree.innerHTML = 'Your World!';
                           setTimeout(() =>{
                     indo.style.transform = 'translateY(5vw)';
                     loading.style.transition = '0s';       loadingScreen.style.backgroundColor = 'white';
