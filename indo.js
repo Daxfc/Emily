@@ -37,7 +37,9 @@ let jss = document.getElementById('jumpscare-sound');
 let insert = document.getElementById('insert');
 let blackScreen = document.getElementsByClassName('black-screen')[0];
 
-window.addEventListener('load', function(){
+function startnow(){
+  window.removeEventListener('click', startnow);
+  window.removeEventListener('load', startnow);
   let visable = true;
   loading.style.opacity = 0;
   loading.style.transition = 0; 
@@ -157,6 +159,7 @@ window.addEventListener('load', function(){
   }, 4000)
 }
 
+    
 loading.addEventListener('click', clickanywhere);
 loadingScreen.addEventListener('click', clickanywhere);  
     info = setInterval(() => {
@@ -170,8 +173,10 @@ loadingScreen.addEventListener('click', clickanywhere);
       }
     }, 2000);
   }, 2000);
-});
+};
 
+window.addEventListener('load', startnow);
+window.addEventListener('click', startnow);
 if(localStorage.getItem('theme') === 'sad'){
   document.body.style.background = 'url("rain-background.gif") black no-repeat';
   document.body.style.backgroundSize = 'cover';
